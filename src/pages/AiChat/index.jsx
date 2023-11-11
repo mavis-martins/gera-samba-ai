@@ -10,6 +10,10 @@ export default function AiChat() {
             {id: prevChats.length, name: `Chat ${prevChats.length + 1}`}]);
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    }
+
     return(
         <>
             <div className="chat-backdoor-area">
@@ -60,7 +64,7 @@ export default function AiChat() {
                                                         </p>
                                                     </div>
                                                     <div className="chat-send">
-                                                        <form>
+                                                        <form onSubmit={handleSubmit}>
                                                             <textarea
                                                             type='text'
                                                             placeholder='Inicie aqui seu primeiro bot!'
