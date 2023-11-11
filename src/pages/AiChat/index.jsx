@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './index.css';
+import sent from '../../assets/images/sentInput.svg';
 
 export default function AiChat() {
     const [chats, setChats] = useState([]);
@@ -60,10 +61,13 @@ export default function AiChat() {
                                                     </div>
                                                     <div className="chat-send">
                                                         <form>
-                                                            <input
+                                                            <textarea
                                                             type='text'
                                                             placeholder='Inicie aqui seu primeiro bot!'
                                                             />
+                                                            <button type='submit'>
+                                                                <img src={sent} alt='Enviar'/>
+                                                            </button>
                                                         </form>
                                                     </div>
                                                 </div>

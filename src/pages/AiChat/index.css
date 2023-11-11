@@ -63,6 +63,13 @@ body{
     max-height: 90vh;
 }
 
+.chat-conversation .tab-content,
+.chat-conversation .tab-content .tab-pane,
+.chat-conversation .tab-content .tab-pane .container,
+.chat-conversation .tab-content .tab-pane .container .chat-space{
+    height: 100%;
+}
+
 .chat-space{
     display: flex;
     flex-direction: column;
@@ -88,5 +95,35 @@ body{
 
 .chat-send{
     margin-top: auto;
+    
+}
 
+.chat-send form textarea{
+    border: 2px solid #D83F31;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    padding: 5px 15px;
+    padding-right: 50px;
+    position: relative;
+    width: 85%;
+}
+
+.chat-send form textarea:focus{
+    outline: none;
+}
+
+.chat-send button{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 120px;
+    top: 87%;
+    transform: translateY(-50%);
+}
+
+.chat-send img{
+    width: 15px;
 }
