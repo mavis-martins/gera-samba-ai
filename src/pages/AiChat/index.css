@@ -51,10 +51,42 @@ body{
     font-weight: 500;
 }
 
+.nav-pills .nav-link.active{
+    background-color: transparent;
+}
+
 .chat-conversation{
     background-color: #EE9322;
     border: 2px solid #D83F31;
     border-radius: 5px;
     height: 90vh;
     max-height: 90vh;
+}
+
+.chat-space{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 5px 0;
+}
+
+.chat-float{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.chat-float .user-float{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.chat-float .gera-samba-float{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.chat-send{
+    margin-top: auto;
+
 }

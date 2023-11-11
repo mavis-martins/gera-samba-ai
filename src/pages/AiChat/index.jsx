@@ -27,23 +27,47 @@ export default function AiChat() {
                                     role='tablist' 
                                     aria-orientation='vertical'
                                     >
-                                        {chats.map(chat => (
-                                            <button className='nav-link' id={`chat-list-${chat.id}-tab`}
-                                            type='button' role='tab' aria-controls={`chat-list-${chat.id}`}
+                                        {chats.map((chat, index) => (
+                                            <button className={`nav-link ${index === 0 ? 'active' : ''}`} id={`chat-list-${chat.id}-tab`}
+                                            data-bs-toggle="pill" href={`#chat-content-${chat.id}`} type='button' role='tab' aria-controls={`chat-list-${chat.id}`}
                                             aria-selected='false' key={chat.id}>
                                                 {chat.name}
                                             </button>
-                                            ))}
+                                        ))}
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-9">
                             <div className="chat-conversation">
-                                <div className="tab-content" id='chat=content'>
-                                    {chats.map(chat => (
-                                        <div className="tab-pane fade" id={`chat-content-${chat.id}`} role='tabpanel' aria-labelledby={`chat-list-${chat.id}-tab`} key={chat.id}>
-                                            {chat.name}
+                                <div className="tab-content" id='chat-content'>
+                                    {chats.map((chat, index) => (
+                                        <div className={`tab-pane fade ${index === 0 ? 'show active' : ''}`} 
+                                        id={`chat-content-${chat.id}`} 
+                                        role='tabpanel' 
+                                        aria-labelledby={`chat-list-${chat.id}-tab`}
+                                        key={chat.id}
+                                        >
+                                            <div className="container">
+                                                <div className="chat-space">
+                                                    <div className="chat-float">
+                                                        <p className='user-float'>
+                                                            {chat.name}
+                                                        </p>
+                                                        <p className='gera-samba-float'>
+                                                            {chat.name}
+                                                        </p>
+                                                    </div>
+                                                    <div className="chat-send">
+                                                        <form>
+                                                            <input
+                                                            type='text'
+                                                            placeholder='Inicie aqui seu primeiro bot!'
+                                                            />
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
